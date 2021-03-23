@@ -19,7 +19,7 @@ function Dashboard() {
   useEffect(() => {
     const loadFoods = async () => {
       const response = await api.get<Array<FoodType>>('/foods');
-      setFoods([...foods, ...response.data]);
+      setFoods(response.data);
     }
 
     loadFoods();
